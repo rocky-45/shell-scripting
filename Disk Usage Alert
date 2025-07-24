@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set threshold
+THRESHOLD=80
+
+# Check disk usage
+usage=$(df / | grep / | awk '{ print $5 }' | sed 's/%//g')
+
+echo "Disk usage is ${usage}%"
+
+if [ "$usage" -ge "$THRESHOLD" ]; then
+    echo "WARNING: Disk usage is above $THRESHOLD%!"
+else
+    echo "Disk usage is normal."
+fi
