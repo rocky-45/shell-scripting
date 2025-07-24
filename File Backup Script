@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SOURCE="/home/user/data"
+DEST="/home/user/backup"
+
+# Create backup folder if not exists
+mkdir -p "$DEST"
+
+# Add timestamp to backup filename
+FILENAME="backup_$(date +%Y%m%d_%H%M%S).tar.gz"
+
+# Create archive
+tar -czf "$DEST/$FILENAME" "$SOURCE"
+
+echo "Backup completed: $DEST/$FILENAME"
