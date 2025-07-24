@@ -1,0 +1,21 @@
+#!/bin/bash
+
+while true; do
+    echo "Select an option:"
+    echo "1. Show Date"
+    echo "2. Show Current Directory"
+    echo "3. Show Logged in Users"
+    echo "4. Exit"
+    
+    read -p "Enter choice [1-4]: " choice
+
+    case $choice in
+        1) date ;;
+        2) pwd ;;
+        3) who ;;
+        4) echo "Exiting..."; exit ;;
+        *) echo "Invalid option." ;;
+    esac
+
+    echo ""
+done
